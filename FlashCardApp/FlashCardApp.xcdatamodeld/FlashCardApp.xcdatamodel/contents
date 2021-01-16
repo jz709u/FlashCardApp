@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CDBase" representedClassName="CDBase" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <relationship name="tags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTag" inverseName="associatedBaseCard" inverseEntity="CDTag"/>
+    </entity>
+    <entity name="CDFlashCard" representedClassName="CDFlashCard" parentEntity="CDBase" syncable="YES" codeGenerationType="class">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="updatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDFlashCardQuestion" inverseName="card" inverseEntity="CDFlashCardQuestion"/>
+    </entity>
+    <entity name="CDFlashCardAnswer" representedClassName="CDFlashCardAnswer" parentEntity="CDFlashCardPart" syncable="YES" codeGenerationType="class">
+        <attribute name="answerType" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="correct" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <relationship name="associatedQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDFlashCardQuestion" inverseName="answers" inverseEntity="CDFlashCardQuestion"/>
+    </entity>
+    <entity name="CDFlashCardPart" representedClassName="CDFlashCardPart" isAbstract="YES" parentEntity="CDBase" syncable="YES" codeGenerationType="class">
+        <attribute name="content" attributeType="String" defaultValueString=""/>
+        <attribute name="order" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDFlashCardQuestion" representedClassName="CDFlashCardQuestion" parentEntity="CDFlashCardPart" syncable="YES" codeGenerationType="class">
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDFlashCardAnswer" inverseName="associatedQuestion" inverseEntity="CDFlashCardAnswer"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDFlashCard" inverseName="questions" inverseEntity="CDFlashCard"/>
+    </entity>
+    <entity name="CDTag" representedClassName="CDTag" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="associatedBaseCard" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBase" inverseName="tags" inverseEntity="CDBase"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="CDBase" positionX="-62.41278076171875" positionY="17.17401123046875" width="128" height="58"/>
+        <element name="CDFlashCard" positionX="-318.7418212890625" positionY="-127.1120910644531" width="128" height="89"/>
+        <element name="CDFlashCardAnswer" positionX="163.977294921875" positionY="-349.689453125" width="128" height="74"/>
+        <element name="CDFlashCardPart" positionX="155.419921875" positionY="-126.1694641113281" width="128" height="73"/>
+        <element name="CDFlashCardQuestion" positionX="-307.8385620117188" positionY="-306.8731384277344" width="128" height="59"/>
+        <element name="CDTag" positionX="-470.314453125" positionY="-35.85174560546875" width="128" height="88"/>
     </elements>
 </model>

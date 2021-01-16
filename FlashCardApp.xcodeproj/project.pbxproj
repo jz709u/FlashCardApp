@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6968A8E225A369EA0091CCA2 /* FlashCardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8E125A369EA0091CCA2 /* FlashCardAppApp.swift */; };
-		6968A8E425A369EA0091CCA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8E325A369EA0091CCA2 /* ContentView.swift */; };
+		690F4A6625AE07B700829B88 /* FlashCard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F4A6525AE07B700829B88 /* FlashCard+Extensions.swift */; };
+		690F4A6B25AE096C00829B88 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F4A6A25AE096C00829B88 /* DependencyManager.swift */; };
+		690F4A7125AE72F900829B88 /* FlashCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F4A7025AE72F900829B88 /* FlashCardFactory.swift */; };
+		690F4A8925AE854100829B88 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F4A8825AE854100829B88 /* ViewModels.swift */; };
+		690F4A9225AE864800829B88 /* FlashCardCoreDataDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F4A9125AE864800829B88 /* FlashCardCoreDataDatabase.swift */; };
+		690F4A9A25AE869100829B88 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F4A9925AE869100829B88 /* Database.swift */; };
+		6955CC0E25A4AE3B00F38F3D /* FlashCardApp.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6968A8EC25A369F80091CCA2 /* FlashCardApp.xcdatamodeld */; };
+		6968A8E225A369EA0091CCA2 /* FlashCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8E125A369EA0091CCA2 /* FlashCardApp.swift */; };
+		6968A8E425A369EA0091CCA2 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8E325A369EA0091CCA2 /* HomePageView.swift */; };
 		6968A8E625A369F80091CCA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6968A8E525A369F80091CCA2 /* Assets.xcassets */; };
 		6968A8E925A369F80091CCA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6968A8E825A369F80091CCA2 /* Preview Assets.xcassets */; };
-		6968A8EB25A369F80091CCA2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8EA25A369F80091CCA2 /* Persistence.swift */; };
-		6968A8EE25A369F80091CCA2 /* FlashCardApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8EC25A369F80091CCA2 /* FlashCardApp.xcdatamodeld */; };
 		6968A8F925A369F90091CCA2 /* FlashCardAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A8F825A369F90091CCA2 /* FlashCardAppTests.swift */; };
 		6968A90425A369F90091CCA2 /* FlashCardAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A90325A369F90091CCA2 /* FlashCardAppUITests.swift */; };
+		6968A91525A418080091CCA2 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968A91425A418080091CCA2 /* FlashCardView.swift */; };
+		69999A7F25B192CE00CC3C6D /* CDBase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7325B192CE00CC3C6D /* CDBase+CoreDataClass.swift */; };
+		69999A8025B192CE00CC3C6D /* CDBase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7425B192CE00CC3C6D /* CDBase+CoreDataProperties.swift */; };
+		69999A8125B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7525B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataClass.swift */; };
+		69999A8225B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7625B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataProperties.swift */; };
+		69999A8325B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7725B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataClass.swift */; };
+		69999A8425B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7825B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataProperties.swift */; };
+		69999A8525B192CE00CC3C6D /* CDTag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7925B192CE00CC3C6D /* CDTag+CoreDataClass.swift */; };
+		69999A8625B192CE00CC3C6D /* CDTag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7A25B192CE00CC3C6D /* CDTag+CoreDataProperties.swift */; };
+		69999A8725B192CE00CC3C6D /* CDFlashCardPart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7B25B192CE00CC3C6D /* CDFlashCardPart+CoreDataClass.swift */; };
+		69999A8825B192CE00CC3C6D /* CDFlashCardPart+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7C25B192CE00CC3C6D /* CDFlashCardPart+CoreDataProperties.swift */; };
+		69999A8925B192CE00CC3C6D /* CDFlashCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7D25B192CE00CC3C6D /* CDFlashCard+CoreDataClass.swift */; };
+		69999A8A25B192CE00CC3C6D /* CDFlashCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A7E25B192CE00CC3C6D /* CDFlashCard+CoreDataProperties.swift */; };
+		69999A9225B193AD00CC3C6D /* ModelBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69999A9125B193AD00CC3C6D /* ModelBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690F4A6525AE07B700829B88 /* FlashCard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlashCard+Extensions.swift"; sourceTree = "<group>"; };
+		690F4A6A25AE096C00829B88 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		690F4A7025AE72F900829B88 /* FlashCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardFactory.swift; sourceTree = "<group>"; };
+		690F4A8825AE854100829B88 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		690F4A9125AE864800829B88 /* FlashCardCoreDataDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCoreDataDatabase.swift; sourceTree = "<group>"; };
+		690F4A9925AE869100829B88 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		6968A8DE25A369EA0091CCA2 /* FlashCardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6968A8E125A369EA0091CCA2 /* FlashCardAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardAppApp.swift; sourceTree = "<group>"; };
-		6968A8E325A369EA0091CCA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6968A8E125A369EA0091CCA2 /* FlashCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardApp.swift; sourceTree = "<group>"; };
+		6968A8E325A369EA0091CCA2 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		6968A8E525A369F80091CCA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6968A8E825A369F80091CCA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6968A8EA25A369F80091CCA2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6968A8ED25A369F80091CCA2 /* FlashCardApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlashCardApp.xcdatamodel; sourceTree = "<group>"; };
 		6968A8EF25A369F80091CCA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6968A8F425A369F90091CCA2 /* FlashCardAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +73,20 @@
 		6968A8FF25A369F90091CCA2 /* FlashCardAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6968A90325A369F90091CCA2 /* FlashCardAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardAppUITests.swift; sourceTree = "<group>"; };
 		6968A90525A369F90091CCA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6968A91425A418080091CCA2 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		69999A7325B192CE00CC3C6D /* CDBase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDBase+CoreDataClass.swift"; path = "FlashCardApp/CoreDataModel/CDBase+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69999A7425B192CE00CC3C6D /* CDBase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDBase+CoreDataProperties.swift"; path = "FlashCardApp/CoreDataModel/CDBase+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69999A7525B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCardQuestion+CoreDataClass.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCardQuestion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69999A7625B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCardQuestion+CoreDataProperties.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCardQuestion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69999A7725B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCardAnswer+CoreDataClass.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCardAnswer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69999A7825B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCardAnswer+CoreDataProperties.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCardAnswer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69999A7925B192CE00CC3C6D /* CDTag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDTag+CoreDataClass.swift"; path = "FlashCardApp/CoreDataModel/CDTag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69999A7A25B192CE00CC3C6D /* CDTag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDTag+CoreDataProperties.swift"; path = "FlashCardApp/CoreDataModel/CDTag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69999A7B25B192CE00CC3C6D /* CDFlashCardPart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCardPart+CoreDataClass.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCardPart+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69999A7C25B192CE00CC3C6D /* CDFlashCardPart+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCardPart+CoreDataProperties.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCardPart+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69999A7D25B192CE00CC3C6D /* CDFlashCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCard+CoreDataClass.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69999A7E25B192CE00CC3C6D /* CDFlashCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDFlashCard+CoreDataProperties.swift"; path = "FlashCardApp/CoreDataModel/CDFlashCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69999A9125B193AD00CC3C6D /* ModelBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +114,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690F4A6F25AE72E500829B88 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				690F4A7025AE72F900829B88 /* FlashCardFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		690F4A8625AE851700829B88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				690F4A8825AE854100829B88 /* ViewModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690F4A9025AE863200829B88 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				69BC45D525A4AC9200624B59 /* CoreDataModelExtensions */,
+				690F4A9925AE869100829B88 /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		6968A8D525A369EA0091CCA2 = {
 			isa = PBXGroup;
 			children = (
+				69999A7325B192CE00CC3C6D /* CDBase+CoreDataClass.swift */,
+				69999A7425B192CE00CC3C6D /* CDBase+CoreDataProperties.swift */,
+				69999A7525B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataClass.swift */,
+				69999A7625B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataProperties.swift */,
+				69999A7725B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataClass.swift */,
+				69999A7825B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataProperties.swift */,
+				69999A7925B192CE00CC3C6D /* CDTag+CoreDataClass.swift */,
+				69999A7A25B192CE00CC3C6D /* CDTag+CoreDataProperties.swift */,
+				69999A7B25B192CE00CC3C6D /* CDFlashCardPart+CoreDataClass.swift */,
+				69999A7C25B192CE00CC3C6D /* CDFlashCardPart+CoreDataProperties.swift */,
+				69999A7D25B192CE00CC3C6D /* CDFlashCard+CoreDataClass.swift */,
+				69999A7E25B192CE00CC3C6D /* CDFlashCard+CoreDataProperties.swift */,
 				6968A8E025A369EA0091CCA2 /* FlashCardApp */,
 				6968A8F725A369F90091CCA2 /* FlashCardAppTests */,
 				6968A90225A369F90091CCA2 /* FlashCardAppUITests */,
@@ -99,10 +174,13 @@
 		6968A8E025A369EA0091CCA2 /* FlashCardApp */ = {
 			isa = PBXGroup;
 			children = (
-				6968A8E125A369EA0091CCA2 /* FlashCardAppApp.swift */,
-				6968A8E325A369EA0091CCA2 /* ContentView.swift */,
+				690F4A9025AE863200829B88 /* Database */,
+				690F4A6A25AE096C00829B88 /* DependencyManager.swift */,
+				690F4A8625AE851700829B88 /* Model */,
+				690F4A6F25AE72E500829B88 /* Factory */,
+				6968A91925A418100091CCA2 /* View */,
+				6968A8E125A369EA0091CCA2 /* FlashCardApp.swift */,
 				6968A8E525A369F80091CCA2 /* Assets.xcassets */,
-				6968A8EA25A369F80091CCA2 /* Persistence.swift */,
 				6968A8EF25A369F80091CCA2 /* Info.plist */,
 				6968A8EC25A369F80091CCA2 /* FlashCardApp.xcdatamodeld */,
 				6968A8E725A369F80091CCA2 /* Preview Content */,
@@ -134,6 +212,25 @@
 				6968A90525A369F90091CCA2 /* Info.plist */,
 			);
 			path = FlashCardAppUITests;
+			sourceTree = "<group>";
+		};
+		6968A91925A418100091CCA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6968A8E325A369EA0091CCA2 /* HomePageView.swift */,
+				6968A91425A418080091CCA2 /* FlashCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69BC45D525A4AC9200624B59 /* CoreDataModelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				690F4A9125AE864800829B88 /* FlashCardCoreDataDatabase.swift */,
+				69999A9125B193AD00CC3C6D /* ModelBridge.swift */,
+				690F4A6525AE07B700829B88 /* FlashCard+Extensions.swift */,
+			);
+			path = CoreDataModelExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6955CC0E25A4AE3B00F38F3D /* FlashCardApp.xcdatamodeld in Resources */,
 				6968A8E925A369F80091CCA2 /* Preview Assets.xcassets in Resources */,
 				6968A8E625A369F80091CCA2 /* Assets.xcassets in Resources */,
 			);
@@ -265,10 +363,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6968A8EB25A369F80091CCA2 /* Persistence.swift in Sources */,
-				6968A8E425A369EA0091CCA2 /* ContentView.swift in Sources */,
-				6968A8EE25A369F80091CCA2 /* FlashCardApp.xcdatamodeld in Sources */,
-				6968A8E225A369EA0091CCA2 /* FlashCardAppApp.swift in Sources */,
+				69999A9225B193AD00CC3C6D /* ModelBridge.swift in Sources */,
+				69999A8825B192CE00CC3C6D /* CDFlashCardPart+CoreDataProperties.swift in Sources */,
+				69999A8125B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataClass.swift in Sources */,
+				6968A8E425A369EA0091CCA2 /* HomePageView.swift in Sources */,
+				69999A8A25B192CE00CC3C6D /* CDFlashCard+CoreDataProperties.swift in Sources */,
+				690F4A9A25AE869100829B88 /* Database.swift in Sources */,
+				69999A8225B192CE00CC3C6D /* CDFlashCardQuestion+CoreDataProperties.swift in Sources */,
+				69999A8325B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataClass.swift in Sources */,
+				690F4A6625AE07B700829B88 /* FlashCard+Extensions.swift in Sources */,
+				69999A8025B192CE00CC3C6D /* CDBase+CoreDataProperties.swift in Sources */,
+				69999A7F25B192CE00CC3C6D /* CDBase+CoreDataClass.swift in Sources */,
+				6968A91525A418080091CCA2 /* FlashCardView.swift in Sources */,
+				690F4A9225AE864800829B88 /* FlashCardCoreDataDatabase.swift in Sources */,
+				6968A8E225A369EA0091CCA2 /* FlashCardApp.swift in Sources */,
+				69999A8925B192CE00CC3C6D /* CDFlashCard+CoreDataClass.swift in Sources */,
+				690F4A8925AE854100829B88 /* ViewModels.swift in Sources */,
+				69999A8525B192CE00CC3C6D /* CDTag+CoreDataClass.swift in Sources */,
+				69999A8725B192CE00CC3C6D /* CDFlashCardPart+CoreDataClass.swift in Sources */,
+				690F4A7125AE72F900829B88 /* FlashCardFactory.swift in Sources */,
+				69999A8625B192CE00CC3C6D /* CDTag+CoreDataProperties.swift in Sources */,
+				690F4A6B25AE096C00829B88 /* DependencyManager.swift in Sources */,
+				69999A8425B192CE00CC3C6D /* CDFlashCardAnswer+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
