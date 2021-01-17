@@ -38,78 +38,106 @@ struct FlashCardView: View {
     }
     
     struct QuestionItemView: View {
+        
         var questionType: QuestionType
         @ObservedObject var visibleHints: ObservableArray<Bool>
+        @State var answerButtonVisible = true
+        @State var hintButtonVisible = true
+        @State var answerVisible = false
+        
         init(questionType: QuestionType) {
             self.questionType = questionType
             visibleHints = ObservableArray(repeating: false, count: questionType.hints.count)
+            hintButtonVisible = questionType.hints.count > 0
         }
         
         var body: some View {
-            VStack(spacing:0) {
-                TermView(textColor: .orange,
-                         term: "Q",
-                         definition: questionType.question,
-                         visible: .constant(true))
-                ForEach(0..<questionType.hints.count) {
-                    TermView(textColor: .yellow,
-                             term: "H",
-                             definition: questionType.hints[$0].hint,
-                             visible: $visibleHints.array[$0])
-                }.padding(.leading, 20)
-                ButtonsView().frame(minWidth: 0,
-                                    idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/,
-                                    maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,
-                                    minHeight: 50,
-                                    maxHeight: 60,
-                                    alignment: .center)
+            GeometryReader { geometry in
+                VStack(spacing:0) {
+                    TermView(textColor: .orange,
+                             term: "Q",
+                             definition: questionType.question,
+                             visible: .constant(true))
+                    ForEach(0..<questionType.hints.count) {
+                        TermView(textColor: .yellow,
+                                 term: "H",
+                                 definition: questionType.hints[$0].hint,
+                                 visible: $visibleHints.array[$0])
+                            
+                    }.padding(.leading, 20)
+                    
+                    if questionType.answer is SingleAnswerType {
+                        TermView(textColor: .green, term: "A", definition: "1", visible: $answerVisible)
+                    }
+                    
+                    
+                    ButtonsView(buttons:
+                    [.init(color: .yellow, title: "H", tapClosure: {
+                        guard let index = visibleHints.array.firstIndex(of: false) else { return }
+                        visibleHints.array[index] = true
+                        if index == visibleHints.array.endIndex {
+                            hintButtonVisible = false
+                        }
+                    }, visible: $hintButtonVisible),
+                    .init(color: .green, title: "A", tapClosure: {
+                        hintButtonVisible = false
+                        answerButtonVisible = false
+                        answerVisible = true
+                    }, visible: $answerButtonVisible)])
+                        .frame(minWidth: 0,
+                                        idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/,
+                                        maxWidth: geometry.size.width,
+                                        minHeight: 50,
+                                        maxHeight: 60,
+                                        alignment: .center)
+                }
             }
         }
     }
     
     struct ButtonsView: View {
         
-        var buttons = [(String,() -> Void)]()
+        struct ButtonView {
+            var color: Color
+            var title: String
+            var tapClosure: () -> Void
+            @Binding var visible: Bool
+        }
         
-        init(buttons: [(String, () -> Void)] = []) {
-            self.buttons = buttons
+        var buttons = [ButtonView]()
+        
+        
+        init(buttons: [ButtonView] = []) {
             
+            self.buttons = buttons
+//            if self.buttons.count > 4 {
+//                self.buttons.removeSubrange(4..<buttons.endIndex)
+//            }
+            //self.buttons = self.buttons.filter({ $0.visible })
         }
         
         var body: some View {
             GeometryReader { geometry in
                 HStack(alignment: .center, spacing: 10) {
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("A")
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(.vertical, 5)
-                    })
-                    .frame(width: geometry.size.width / 4,
-                            alignment: .center)
-                    .background(RoundedRectangle(cornerSize: CGSize(width: 10,
-                                                                     height: 10),
-                                                  style: .circular)
-                                    .foregroundColor(.green))
+                    ForEach(0..<buttons.count) { index in
+                        if buttons[index].visible {
+                            Button(action: buttons[index].tapClosure, label: {
+                                Text(buttons[index].title)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 5)
+                            })
+                            .frame(width: ((geometry.size.width - 50) / 4.0) ,
+                                    alignment: .center)
+                            .background(RoundedRectangle(cornerSize: CGSize(width: 10,
+                                                                             height: 10),
+                                                          style: .circular)
+                                            .foregroundColor(buttons[index].color))
+                        }
+                    }
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("H")
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(.vertical, 5)
-                    })
-                    .frame(width: geometry.size.width / 4,
-                           alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(RoundedRectangle(cornerSize: CGSize(width: 10,
-                                                                    height: 10),
-                                                  style: .circular)
-                                    .foregroundColor(.yellow))
-                    
-                }.frame(width: geometry.size.width,
+                }
+                .frame(width: geometry.size.width,
                         height: geometry.size.height,
                         alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
@@ -164,9 +192,9 @@ struct FlashCardView_Previews: PreviewProvider {
     }
 
     static var card: FlashCardVM = {
-        FlashCardVM(questions: [FlashCardQuestionVM(answer: SingleAnswerVM(content: "yes"),
-                                                    hints: [HintVM(hint: "yes")],
-                                                    question: "question 1")])
+        FlashCardVM(questions: [FlashCardQuestionVM(answer: SingleAnswerVM(content: "World"),
+                                                    hints: [HintVM(hint: "W____")],
+                                                    question: "Hello _____")])
     }()
 
     static var previews: some View {
